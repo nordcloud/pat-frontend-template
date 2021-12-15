@@ -1,3 +1,5 @@
+/* Copyright (c) 2021 Nordcloud Oy or its affiliates. All Rights Reserved. */
+
 import styled, { css } from "styled-components";
 import { theme } from "@nordcloud/gnui";
 
