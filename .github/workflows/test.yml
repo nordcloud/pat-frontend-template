@@ -1,0 +1,19 @@
+# Copyright 2021 Nordcloud Oy or its affiliates. All Rights Reserved.
+
+name: Action
+on:
+  pull_request:
+    branches: [master]
+jobs:
+  test:
+    name: Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16.13.1'
+      - run: npm ci
+      - run: npm run validate:all
+      - run: npm run test:all

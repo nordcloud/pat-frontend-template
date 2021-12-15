@@ -1,0 +1,23 @@
+# Copyright 2021 Nordcloud Oy or its affiliates. All Rights Reserved.
+
+name: Action
+on:
+  pull_request:
+    branches: [master]
+jobs:
+  licenses:
+    name: Check licenses
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - id: changed-files
+        uses: jitterbit/get-changed-files@v1
+      - uses: nordcloud/addlicense@master
+        with:
+          directory-pattern: '${{ steps.changed-files.outputs.all }}'
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v7.0.0
+        with:
+          message: 'Update license headers'
+          add: '${{ steps.changed-files.outputs.all }}'
