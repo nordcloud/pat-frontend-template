@@ -1,3 +1,7 @@
+/**
+ * Copyright 2021 Nordcloud Oy or its affiliates. All Rights Reserved.
+ */
+
 import * as React from "react";
 import { Spinner, Text, theme } from "@nordcloud/gnui";
 import { Wrapper, Box, buttonCss } from "~/styles";
