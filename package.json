@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Frontend template based on Vite",
   "author": "Nordcloud Engineering",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "homepage": "https://github.com/nordcloud/pat-frontend-template#readme",
   "repository": {
     "type": "git",
