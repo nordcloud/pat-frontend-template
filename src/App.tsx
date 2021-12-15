@@ -9,7 +9,7 @@ export function App() {
 
   return (
     <Wrapper>
-      <header className="App-header">
+      < className="App-header">
         <Logo className="App-logo" />
         <Text
           css={{
