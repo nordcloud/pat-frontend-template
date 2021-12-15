@@ -7,7 +7,7 @@ A step-by-step guide for migrating a project from v4 of [Create React App](https
 - [Remove Create React App](#1-remove-create-react-app)
 - [Install Vite](#2-install-vite)
   - [Update tsconfig](#update-tsconfig-path-aliasing-included)
-  - [Update package.json](#add-scripts-to-packagejson)
+  - [Update package.json](#update-packagejson)
   - [Create config file](#create-config-file)
 - [Environment variables](#3-environment-variables)
 - [Static analysis](#4-static-analysis)
@@ -17,7 +17,8 @@ A step-by-step guide for migrating a project from v4 of [Create React App](https
 - [Testing environment setup](#8-testing-environment-setup)
   - [Install packages](#install-packages)
   - [Jest config setup](#jest-config-setup)
-  - [Add scripts](#jest-config-setup)
+  - [Mock SVG files](#mock-svg-files)
+  - [Add scripts](#add-scripts)
   - [Alternative setups](#alternative-setups)
 - [Additional features](#9-additional-features)
 - [Troubleshooting](#troubleshooting)
@@ -361,6 +362,7 @@ const config = {
   moduleNameMapper: {
     ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$":
       "identity-obj-proxy",
+    "\\.svg$": "<rootDir>/__mocks__/svg.js",
     "~(.*)$": "<rootDir>/src/$1",
   },
   moduleDirectories: ["node_modules", "<rootDir>/node_modules", "."],
@@ -372,6 +374,15 @@ const config = {
 };
 
 module.exports = config;
+```
+
+### Mock SVG files
+
+Create `__mocks__/svg.js`:
+
+```javascript
+export default "SvgrURL";
+export const ReactComponent = "div";
 ```
 
 ### Add scripts
