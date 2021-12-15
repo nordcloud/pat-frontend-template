@@ -13,7 +13,7 @@ export function App() {
 
   return (
     <Wrapper>
-      < className="App-header">
+      <header className="App-header">
         <Logo className="App-logo" />
         <Text
           css={{
