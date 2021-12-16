@@ -422,7 +422,7 @@ SERVER_OPEN_BROWSER=true
 ```typescript
 import { defineConfig, loadEnv } from "vite";
 
-const ENV_PREFIX = ["REACT_APP_", "SERVER];
+const ENV_PREFIX = ["REACT_APP_", "SERVER"];
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
