@@ -41,6 +41,7 @@ Create `.env` file
 ```bash
 REACT_APP_CLIENT_TOKEN=
 REACT_APP_ENV=development
+SERVER_OPEN_BROWSER=false
 ```
 
 ## [Create React App migration guide](./docs/CRA_MIGRATION_GUIDE.md)
