@@ -440,7 +440,7 @@ export default defineConfig(({ mode }) => {
 ### Compile time replacement
 
 There are cases when we want to replace certain variables with some values at compile time (e.g. insert code version extracted from git for uploading source maps),
-we've used custom config with `craco` to achieve that in CRA using [Define plugin](https://webpack.js.org/plugins/define-plugin/):
+we've used [craco](https://github.com/gsoft-inc/craco) and [Define plugin](https://webpack.js.org/plugins/define-plugin/) to achieve that in CRA:
 
 **craco.config.js**
 
