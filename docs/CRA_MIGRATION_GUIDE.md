@@ -265,6 +265,13 @@ declare module "*.svg" {
   <link rel="icon" href="/favicon.ico" />
   ```
 
+- Add Entry script tag to 'index.html'
+
+  ```html
+  <!-- Add to body -->
+  <script type="module" src="/src/index.tsx"></script>
+  ```
+
 - Embedding JavaScript:
   CRA supported [ejs](https://ejs.co/) out of the box, we will need additional [plugin for Vite](https://github.com/anncwb/vite-plugin-html):
 
