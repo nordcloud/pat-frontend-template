@@ -1,6 +1,5 @@
 /* Copyright (c) 2021 Nordcloud Oy or its affiliates. All Rights Reserved. */
 
-import * as React from "react";
 import { screen, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { App } from "./App";

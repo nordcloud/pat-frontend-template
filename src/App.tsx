@@ -1,13 +1,13 @@
 /* Copyright (c) 2021 Nordcloud Oy or its affiliates. All Rights Reserved. */
 
-import * as React from "react";
+import { useState } from "react";
 import { Spinner, Text, theme } from "@nordcloud/gnui";
 import { Wrapper, Box, buttonCss } from "~/styles";
 import { ReactComponent as Logo } from "./logo.svg";
 import "./App.css";
 
 export function App() {
-  const [count, setCount] = React.useState(0);
+  const [count, setCount] = useState(0);
 
   return (
     <Wrapper>
