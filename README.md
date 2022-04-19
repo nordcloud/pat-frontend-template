@@ -8,7 +8,7 @@ This is a basic setup for our frontend projects, it includes [**Migration guide*
 2. Code is written in [**Typescript**](https://basarat.gitbook.io/typescript/getting-started)
 3. [**Prettier**](https://prettier.io/) formatter
 4. Linting implemented with [**Stylelint**](https://stylelint.io/) and [**ESLint**](https://eslint.org/)
-5. Testing setup consists of [**Jest**](https://jestjs.io/) and [**Testing Library**](https://testing-library.com/)
+5. Testing setup consists of [**Vitest**](https://vitest.dev/) and [**Testing Library**](https://testing-library.com/)
 6. Support for styling with [**Styled Components**](https://styled-components.com/)
 7. [**GNUI**](https://github.com/nordcloud/GNUI) component library
 8. Additional checks that improve codebase maintenance (**circular dependencies, unused exports**)

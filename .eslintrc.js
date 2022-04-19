@@ -5,8 +5,8 @@ require("@nordcloud/eslint-config-pat/patch/modern-module-resolution");
 module.exports = {
   extends: [
     "@nordcloud/eslint-config-pat/profile/web-app",
-    "@nordcloud/eslint-config-pat/mixins/jest",
     "@nordcloud/eslint-config-pat/mixins/react",
+    "plugin:react/jsx-runtime",
   ],
 
   parserOptions: { tsconfigRootDir: __dirname },
@@ -14,9 +14,6 @@ module.exports = {
   settings: {
     react: {
       version: "16.13.1", // React version. "detect" automatically picks the version you have installed.
-    },
-    jest: {
-      version: "26",
     },
   },
 

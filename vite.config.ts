@@ -1,8 +1,12 @@
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
+
 /* Copyright (c) 2021 Nordcloud Oy or its affiliates. All Rights Reserved. */
 
 import path from "path";
 import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
+import { configDefaults } from "vitest/config";
 import envCompatible from "vite-plugin-env-compatible";
 import svgrPlugin from "vite-plugin-svgr";
 import html from "vite-plugin-html";
@@ -70,6 +74,16 @@ export default defineConfig(({ mode }) => {
     build: {
       outDir: "build",
       sourcemap: isProd ? "hidden" : true,
+    },
+    test: {
+      globals: true,
+      environment: "jsdom",
+      setupFiles: "src/setupTests.ts",
+      testTimeout: 10000,
+      clearMocks: true,
+      coverage: {
+        include: ["src/**/*.{js,jsx,ts,tsx}"],
+      },
     },
   };
 });
