@@ -48,8 +48,8 @@
     "postinstall": "patch-package && husky install"
   },
   "engines": {
-    "node": ">=16.11.0",
-    "npm": ">=8.0.0"
+    "node": ">=16.17.0",
+    "npm": ">=8.15.0"
   },
   "dependencies": {
     "@nordcloud/gnui": "^5.3.3",
