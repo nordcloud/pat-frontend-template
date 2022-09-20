@@ -6,10 +6,9 @@
 import path from "path";
 import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
-import { configDefaults } from "vitest/config";
 import envCompatible from "vite-plugin-env-compatible";
 import svgrPlugin from "vite-plugin-svgr";
-import html from "vite-plugin-html";
+import { createHtmlPlugin } from "vite-plugin-html";
 import checker from "vite-plugin-checker";
 import { codeVersion } from "./scripts/code-version";
 
@@ -20,6 +19,14 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, "env", [ENV_PREFIX, "SERVER"]);
   const isProd = env.REACT_APP_ENV === "production";
 
+  console.log({
+    env: {
+      NODE_ENV: process.env.NODE_ENV,
+      REACT_APP_CLIENT_TOKEN: env.REACT_APP_CLIENT_TOKEN,
+      REACT_APP_ENV: env.REACT_APP_ENV,
+    },
+  });
+
   return {
     plugins: [
       envCompatible({ prefix: ENV_PREFIX }),
@@ -27,13 +34,13 @@ export default defineConfig(({ mode }) => {
         overlay: false,
         typescript: true,
       }),
-      html({
+      createHtmlPlugin({
         inject: {
           data: {
             env: {
               NODE_ENV: process.env.NODE_ENV,
-              REACT_APP_CLIENT_TOKEN: process.env.REACT_APP_CLIENT_TOKEN,
-              REACT_APP_ENV: process.env.REACT_APP_ENV,
+              REACT_APP_CLIENT_TOKEN: env.REACT_APP_CLIENT_TOKEN,
+              REACT_APP_ENV: env.REACT_APP_ENV,
             },
           },
         },
