@@ -19,14 +19,6 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, "env", [ENV_PREFIX, "SERVER"]);
   const isProd = env.REACT_APP_ENV === "production";
 
-  console.log({
-    env: {
-      NODE_ENV: process.env.NODE_ENV,
-      REACT_APP_CLIENT_TOKEN: env.REACT_APP_CLIENT_TOKEN,
-      REACT_APP_ENV: env.REACT_APP_ENV,
-    },
-  });
-
   return {
     plugins: [
       envCompatible({ prefix: ENV_PREFIX }),

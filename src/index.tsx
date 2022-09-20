@@ -1,15 +1,16 @@
 /* Copyright (c) 2021 Nordcloud Oy or its affiliates. All Rights Reserved. */
 
 import { StrictMode } from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { SetGlobalStyle } from "@nordcloud/gnui";
 import { App } from "./App";
 import "./index.css";
+const container = document.getElementById("root");
+const root = createRoot(container as HTMLElement); // createRoot(container!) if you use TypeScript
 
-ReactDOM.render(
+root.render(
   <StrictMode>
     <SetGlobalStyle />
     <App />
-  </StrictMode>,
-  document.getElementById("root")
+  </StrictMode>
 );

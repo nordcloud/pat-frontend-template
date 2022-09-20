@@ -10,6 +10,6 @@ test("increases counter", async () => {
   const counter = screen.getByRole("button", { name: /count is/i });
 
   expect(counter.textContent).toMatchInlineSnapshot(`"count is: 0"`);
-  userEvent.click(counter);
+  await userEvent.click(counter);
   expect(counter.textContent).toMatchInlineSnapshot(`"count is: 1"`);
 });
