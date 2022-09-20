@@ -48,27 +48,27 @@
     "postinstall": "patch-package && husky install"
   },
   "engines": {
-    "node": ">=16.11.0",
-    "npm": ">=8.0.0"
+    "node": ">=16.17.0",
+    "npm": ">=8.15.0"
   },
   "dependencies": {
-    "@nordcloud/gnui": "^5.3.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "styled-components": "^5.3.3"
+    "@nordcloud/gnui": "^7.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
-    "@nordcloud/eslint-config-pat": "^2.1.2",
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/node": "^16.11.13",
-    "@types/react": "^17.0.33",
-    "@types/react-dom": "^17.0.10",
-    "@types/styled-components": "^5.1.18",
-    "@vitejs/plugin-react": "^1.0.7",
+    "@nordcloud/eslint-config-pat": "^3.0.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/node": "^16.11.59",
+    "@types/react": "^18.0.20",
+    "@types/react-dom": "^18.0.6",
+    "@types/styled-components": "^5.1.26",
+    "@vitejs/plugin-react": "^2.1.0",
     "babel-plugin-styled-components": "^2.0.2",
-    "c8": "^7.11.0",
+    "c8": "^7.12.0",
     "eslint": "^7.32.0",
     "husky": "^7.0.4",
     "jsdom": "^19.0.0",
@@ -76,18 +76,18 @@
     "madge": "^5.0.1",
     "npm-run-all": "^4.1.5",
     "patch-package": "^6.4.7",
-    "prettier": "^2.5.1",
+    "prettier": "^2.7.1",
     "stylelint": "^13.13.1",
     "stylelint-config-recommended": "^5.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.10.0",
     "ts-prune": "^0.10.3",
     "typescript": "^4.4.4",
-    "vite": "^2.7.2",
-    "vite-plugin-checker": "^0.3.4",
+    "vite": "^3.1.3",
+    "vite-plugin-checker": "^0.5.1",
     "vite-plugin-env-compatible": "^1.1.1",
-    "vite-plugin-html": "^2.1.1",
-    "vite-plugin-svgr": "^0.6.0",
-    "vitest": "^0.9.3"
+    "vite-plugin-html": "^3.2.0",
+    "vite-plugin-svgr": "^2.2.1",
+    "vitest": "^0.23.4"
   }
 }

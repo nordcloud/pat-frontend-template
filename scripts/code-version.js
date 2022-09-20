@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 /* Copyright (c) 2021 Nordcloud Oy or its affiliates. All Rights Reserved. */
 
 const { execSync } = require("child_process");

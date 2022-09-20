@@ -13,7 +13,7 @@ module.exports = {
 
   settings: {
     react: {
-      version: "16.13.1", // React version. "detect" automatically picks the version you have installed.
+      version: "detect", // React version. "detect" automatically picks the version you have installed.
     },
   },
 
