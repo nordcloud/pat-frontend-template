@@ -48,8 +48,8 @@
     "postinstall": "patch-package && husky install"
   },
   "engines": {
-    "node": ">=16.17.0",
-    "npm": ">=8.15.0"
+    "node": ">=18.12.0",
+    "npm": ">=8.19.2"
   },
   "dependencies": {
     "@nordcloud/gnui": "^7.1.0",
@@ -62,7 +62,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
-    "@types/node": "^16.11.59",
+    "@types/node": "^18.11.9",
     "@types/react": "^18.0.20",
     "@types/react-dom": "^18.0.6",
     "@types/styled-components": "^5.1.26",
