@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GHTOKEN }}
       - id: changed-files
         uses: jitterbit/get-changed-files@v1
       - uses: nordcloud/addlicense@master
