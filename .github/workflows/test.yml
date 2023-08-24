@@ -1,6 +1,6 @@
 # Copyright 2021-2022 Nordcloud Oy or its affiliates. All Rights Reserved.
 
-name: Action
+name: Test
 on:
   pull_request:
     branches: [master]

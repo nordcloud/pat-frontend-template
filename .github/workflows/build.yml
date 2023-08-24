@@ -1,0 +1,19 @@
+# Copyright 2023 Nordcloud Oy or its affiliates. All Rights Reserved.
+
+name: Build
+on:
+  pull_request:
+    branches: [master]
+jobs:
+  build:
+    name: Run Vite build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: package.json
+
+      - run: npm ci
+      - run: npm audit signatures
+      - run: npm run build
