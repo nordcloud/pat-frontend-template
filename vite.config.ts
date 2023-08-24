@@ -1,7 +1,7 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 
-/* Copyright (c) 2021 Nordcloud Oy or its affiliates. All Rights Reserved. */
+/* Copyright (c) 2021-2023 Nordcloud Oy or its affiliates. All Rights Reserved. */
 
 import path from "path";
 import { defineConfig, loadEnv } from "vite";
