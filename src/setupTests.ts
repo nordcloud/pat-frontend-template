@@ -1,7 +1,25 @@
-/* Copyright (c) 2021 Nordcloud Oy or its affiliates. All Rights Reserved. */
+/* Copyright (c) 2021-2023 Nordcloud Oy or its affiliates. All Rights Reserved. */
 
-import "@testing-library/jest-dom/extend-expect";
+import type { TestingLibraryMatchers } from "@testing-library/jest-dom/matchers";
+import * as matchers from "@testing-library/jest-dom/matchers";
 import { configure } from "@testing-library/react";
+import { expect, vi } from "vitest";
+
+declare module "vitest" {
+  type Assertion<T = any> = jest.Matchers<void, T> &
+    TestingLibraryMatchers<T, void> &
+    object;
+}
+
+expect.extend(matchers);
+
+beforeAll(() => {
+  global.ResizeObserver = vi.fn().mockImplementation(() => ({
+    observe: vi.fn(),
+    unobserve: vi.fn(),
+    disconnect: vi.fn(),
+  }));
+});
 
 configure({
   asyncUtilTimeout: 3000,

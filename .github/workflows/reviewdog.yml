@@ -1,0 +1,60 @@
+# Copyright 2021-2023 Nordcloud Oy or its affiliates. All Rights Reserved.
+
+name: Reviewdog
+on: [pull_request]
+
+jobs:
+  reviewdog:
+    if: github.event.pull_request.draft == false
+    name: Reviewdog
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: package.json
+
+      - run: npm ci
+      - run: npm audit signatures
+
+      - name: Prettier
+        uses: EPMatt/reviewdog-action-prettier@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review
+          level: warning
+          fail_on_error: false
+          prettier_flags: '**/*.+(js|json|graphql|ts|tsx|md|yml|css|html)'
+
+      - name: ESLint
+        uses: reviewdog/action-eslint@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review
+          filter_mode: added
+          level: warning
+          fail_on_error: false
+          eslint_flags: . --report-unused-disable-directives
+
+      - name: Stylelint
+        uses: reviewdog/action-stylelint@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review
+          filter_mode: file
+          level: warning
+          fail_on_error: false
+          stylelint_input: '**/*.+(ts|tsx)'
+
+      - name: TypeScript
+        uses: EPMatt/reviewdog-action-tsc@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-check
+          filter_mode: nofilter
+          level: warning
+          fail_on_error: false

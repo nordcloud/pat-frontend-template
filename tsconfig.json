@@ -14,11 +14,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "useUnknownInCatchVariables": false,
+    "noUncheckedIndexedAccess": true,
     "jsx": "react-jsxdev",
     "paths": {
       "~/*": ["./src/*"]
     },
-    "baseUrl": "."
+    "baseUrl": ".",
+    "types": ["vitest/globals"]
   },
   "include": ["./src"]
 }

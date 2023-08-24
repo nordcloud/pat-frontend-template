@@ -1,7 +1,7 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 
-/* Copyright (c) 2021 Nordcloud Oy or its affiliates. All Rights Reserved. */
+/* Copyright (c) 2021-2023 Nordcloud Oy or its affiliates. All Rights Reserved. */
 
 import path from "path";
 import { defineConfig, loadEnv } from "vite";
@@ -10,6 +10,7 @@ import envCompatible from "vite-plugin-env-compatible";
 import svgrPlugin from "vite-plugin-svgr";
 import { createHtmlPlugin } from "vite-plugin-html";
 import checker from "vite-plugin-checker";
+import { configDefaults } from "vitest/config";
 import { codeVersion } from "./scripts/code-version";
 
 const ENV_PREFIX = "REACT_APP_";
@@ -79,10 +80,29 @@ export default defineConfig(({ mode }) => {
       environment: "jsdom",
       setupFiles: "src/setupTests.ts",
       testTimeout: 10000,
+      teardownTimeout: 180000,
       clearMocks: true,
+      include: ["src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
       coverage: {
-        include: ["src/**/*.{js,jsx,ts,tsx}"],
+        src: ["src"],
+        include: ["src/**/*.{ts,tsx}"],
+        exclude: [
+          ...(configDefaults.coverage.exclude ?? []),
+          "src/setupTests.ts",
+          "src/**/__mockups__/**",
+          "src/**/__tests__/**",
+          "src/**/*.spec.ts",
+          "src/**/*.spec.tsx",
+        ],
+        reporter: ["text", "lcovonly"],
+        provider: "v8",
+        all: true,
+        lines: 45,
+        branches: 35,
+        functions: 35,
+        statements: 45,
       },
+      reporters: process.env.CI ? ["default"] : ["default", "verbose"],
     },
   };
 });

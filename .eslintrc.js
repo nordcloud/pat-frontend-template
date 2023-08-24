@@ -1,4 +1,4 @@
-/* Copyright (c) 2021 Nordcloud Oy or its affiliates. All Rights Reserved. */
+/* Copyright (c) 2021-2023 Nordcloud Oy or its affiliates. All Rights Reserved. */
 
 require("@nordcloud/eslint-config-pat/patch/modern-module-resolution");
 
@@ -6,6 +6,7 @@ module.exports = {
   extends: [
     "@nordcloud/eslint-config-pat/profile/web-app",
     "@nordcloud/eslint-config-pat/mixins/react",
+    "@nordcloud/eslint-config-pat/mixins/graphql/operations",
     "plugin:react/jsx-runtime",
   ],
 

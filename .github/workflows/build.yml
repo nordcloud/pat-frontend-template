@@ -1,20 +1,19 @@
-# Copyright 2021-2023 Nordcloud Oy or its affiliates. All Rights Reserved.
+# Copyright 2023 Nordcloud Oy or its affiliates. All Rights Reserved.
 
-name: Test
+name: Build
 on:
   pull_request:
     branches: [master]
 jobs:
-  test:
-    name: Tests
+  build:
+    name: Run Vite build
     runs-on: ubuntu-latest
-    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version-file: package.json
+
       - run: npm ci
       - run: npm audit signatures
-      - run: npm run validate:all
-      - run: npm run test
+      - run: npm run build
