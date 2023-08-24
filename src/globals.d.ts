@@ -2,4 +2,12 @@
 
 /// <reference types="vite/client" />
 
-import "@testing-library/jest-dom/extend-expect";
+import { CSSProp } from "styled-components";
+
+interface DefaultTheme {}
+
+declare module "react" {
+  interface HTMLAttributes<T> extends DOMAttributes<T> {
+    css?: CSSProp<DefaultTheme>;
+  }
+}

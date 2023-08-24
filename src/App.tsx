@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import { Spinner, Text, theme } from "@nordcloud/gnui";
+import { useGNUITheme } from "~/hooks/useGnuiTheme";
 import { Wrapper, Box, buttonCss } from "~/styles";
 import { ReactComponent as Logo } from "./logo.svg";
 import "./App.css";
 
 export function App() {
   const [count, setCount] = useState(0);
+  const { currentTheme } = useGNUITheme();
 
   return (
     <Wrapper>
@@ -30,6 +32,7 @@ export function App() {
         <Text>
           Edit <code>App.tsx</code> and save to test HMR updates.
         </Text>
+        <Text>Current theme: {currentTheme}</Text>
         <Box>
           <a
             className="App-link"

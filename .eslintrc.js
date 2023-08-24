@@ -6,6 +6,7 @@ module.exports = {
   extends: [
     "@nordcloud/eslint-config-pat/profile/web-app",
     "@nordcloud/eslint-config-pat/mixins/react",
+    "@nordcloud/eslint-config-pat/mixins/graphql/operations",
     "plugin:react/jsx-runtime",
   ],
 
