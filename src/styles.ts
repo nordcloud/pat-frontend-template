@@ -1,11 +1,11 @@
 /* Copyright (c) 2021 Nordcloud Oy or its affiliates. All Rights Reserved. */
 
-import styled, { css } from "styled-components";
+import { css, styled } from "styled-components";
 import { theme } from "@nordcloud/gnui";
 
-export const Wrapper = styled.div`
-  text-align: center;
-`;
+export const Wrapper = styled.div({
+  textAlign: "center",
+});
 
 export const Box = styled.div({
   background: "#1e1c32",

@@ -22,8 +22,8 @@ export function App() {
         </Text>
         <button
           type="button"
-          onClick={() => setCount((prevCount) => prevCount + 1)}
           css={buttonCss}
+          onClick={() => setCount((prevCount) => prevCount + 1)}
         >
           count is: {count}
         </button>
