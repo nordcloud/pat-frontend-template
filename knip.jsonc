@@ -1,0 +1,14 @@
+{
+  "$schema": "https://unpkg.com/knip@next/schema.json",
+  "entry": ["src/index.tsx!"],
+  "project": ["src/**/*.{ts,tsx}!", "scripts/**/*.{js,ts}", "vite.config.ts"],
+  "rules": {
+    "enumMembers": "warn"
+  },
+  "ignoreDependencies": [
+    "eslint-plugin-react",
+    "@vitest/coverage-v8",
+    "@testing-library/jest-dom"
+  ],
+  "ignore": ["**/*.d.ts", "**/generated", "src/setupTests.ts"]
+}
