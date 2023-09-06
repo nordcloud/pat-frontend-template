@@ -1,3 +1,7 @@
+/**
+ * Copyright 2023 Nordcloud Oy or its affiliates. All Rights Reserved.
+ */
+
 /** @see https://github.com/lirantal/lockfile-lint/tree/main/packages/lockfile-lint#file-based-configuration */
 module.exports = {
   type: "npm",
