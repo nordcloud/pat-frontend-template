@@ -6,6 +6,7 @@ import { configure } from "@testing-library/react";
 import { expect, vi } from "vitest";
 
 declare module "vitest" {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- it makes sense to have it here
   type Assertion<T = any> = jest.Matchers<void, T> &
     TestingLibraryMatchers<T, void> &
     object;
