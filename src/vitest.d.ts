@@ -1,3 +1,7 @@
+/**
+ * Copyright 2023 Nordcloud Oy or its affiliates. All Rights Reserved.
+ */
+
 import type { TestingLibraryMatchers } from "@testing-library/jest-dom/matchers";
 import type { Assertion, AsymmetricMatchersContaining } from "vitest";
 
