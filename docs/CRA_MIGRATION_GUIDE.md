@@ -213,7 +213,7 @@ export default defineConfig(({ mode }) => {
 CRA allows to transform `.svg` files into React components.
 
 ```tsx
-import { ReactComponent as Logo } from "./logo.svg";
+import { ReactComponent as Logo } from "./logo.svg?react";
 ```
 
 In order to make this work with Vite we will need a [plugin](https://github.com/pd4d10/vite-plugin-svgr)
