@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Spinner, Text, theme } from "@nordcloud/gnui";
 import { useGNUITheme } from "~/hooks/useGnuiTheme";
 import { Wrapper, Box, buttonCss } from "~/styles";
-import { ReactComponent as Logo } from "./logo.svg";
+import Logo from "./logo.svg?react";
 import "./App.css";
 
 export function App() {
