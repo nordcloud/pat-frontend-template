@@ -1,6 +1,6 @@
 # CRA -> Vite migration guide
 
-A step-by-step guide for migrating a project from v4 of [Create React App](https://create-react-app.dev/) to [Vite](https://vitejs.dev/) with `ts-jest` setup.a
+A step-by-step guide for migrating a project from v4 of [Create React App](https://create-react-app.dev/) to [Vite](https://vitejs.dev/) with `ts-jest` setup.
 
 ## Table of Contents
 
