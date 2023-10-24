@@ -1,6 +1,6 @@
 # CRA -> Vite migration guide
 
-A step-by-step guide for migrating a project from v4 of [Create React App](https://create-react-app.dev/) to [Vite](https://vitejs.dev/) with `ts-jest` setup.
+A step-by-step guide for migrating a project from v4 of [Create React App](https://create-react-app.dev/) to [Vite](https://vitejs.dev/) with `ts-jest` setup.a
 
 ## Table of Contents
 
@@ -128,6 +128,15 @@ export default defineConfig(({ mode }) => {
 });
 ```
 
+### Create vite-env.d.ts
+
+Add **vite-env.d.ts** in the `src` folder of your project
+
+```typescript
+/// <reference types="vite/client" />
+```
+
+
 ## 3. Environment variables
 
 Vite handles environment variables in a different way than CRA, [Read here](https://vitejs.dev/guide/env-and-mode.html),
@@ -240,17 +249,12 @@ export default defineConfig(({ mode }) => {
 });
 ```
 
-You also might need to add additional declarations file to satisfy TypeScript.
-Create `src/custom.d.ts`:
+Add additional declaration to the `src/vite-env.d.ts` file
 
 ```typescript
-declare module "*.svg" {
-  import React = require("react");
-  export const ReactComponent: React.FC<React.SVGProps<SVGSVGElement>>;
-  const src: string;
-  export default src;
-}
+/// <reference types="vite-plugin-svgr/client" />
 ```
+
 
 ## 7. Index.html
 
